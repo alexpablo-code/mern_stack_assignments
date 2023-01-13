@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React from 'react';
+import Album from './components/Album'
 
 function App() {
   return (
@@ -13,6 +14,18 @@ function App() {
         <li>Run a marathon</li>
         <li>Feed the dogs</li>
       </ul>
+
+      <Album 
+      albumName={'Blue Side Park'}
+      bandName={'Mac Miller'}
+      releaseYear={'2012'}
+      />
+
+      <Album 
+      albumName={'Titanic Rising'}
+      bandName={'Weyes Blood'}
+      releaseYear={'2021'}
+      />
     </div>
   );
 }
