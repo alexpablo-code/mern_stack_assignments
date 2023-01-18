@@ -29,7 +29,6 @@ function App() {
         age = {53}
         hairColor = {'Dark Brown'}
       />
-      <button onClick={ ()=> alert("This button has been clicked!") }>Click Me</button>
     </div>
   );
 }

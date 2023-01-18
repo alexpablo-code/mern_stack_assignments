@@ -12,7 +12,7 @@ const PersonCard =(props) => {
             <h2>{props.lastName}, {props.firstName}</h2>
             <p>Age: {age}</p>
             <p>Hair Color: {props.hairColor}</p>
-            <button onClick={birthday}>Set</button>
+            <button onClick={birthday}>Birthday</button>
         </div>
     )
 }
