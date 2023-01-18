@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import PersonCard from './components/PersonCard';
+import UserForm from './components/UserForm';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         age = {53}
         hairColor = {'Dark Brown'}
       />
+
+      <UserForm/>
     </div>
   );
 }
