@@ -6,6 +6,7 @@ const HookForm = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPass, setConfirmPass] = useState("");
+    const[submitted, setSubmitted] = useState(false);
 
     const createUser = (e) => {
         e.preventDefault();
@@ -19,12 +20,25 @@ const HookForm = (props) => {
         setEmail("");
         setPassword("");
         setConfirmPass("");
+
+
+        setSubmitted(true);
+    };
+
+    const formMessage = () => {
+        if(submitted) {
+            return "Thank you for submitting the form!";
+        }
+        else {
+            return ("Welcome, please submit form");
+        }
     };
 
 
     return (
         <div>
             <form onSubmit={createUser}>
+                <h2>{formMessage()}</h2>
                 <div>
                     <label htmlFor="fName">First Name:</label>
                     <input type="text" name="" id="" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
