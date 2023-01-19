@@ -53,11 +53,11 @@ const HookForm = (props) => {
                 </div>
                 <div>
                     <label htmlFor="fName">Password:</label>
-                    <input type="text" name="" id="" value= {password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="password" name="" id="" value= {password} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="fName">Confirm Password:</label>
-                    <input type="text" name="" id="" value= {confirmPass} onChange={(e) => setConfirmPass(e.target.value)}/>
+                    <input type="password" name="" id="" value= {confirmPass} onChange={(e) => setConfirmPass(e.target.value)}/>
                 </div>
                 <input type="submit" />
             </form>
