@@ -73,16 +73,23 @@ const HookForm = (props) => {
     };
 
     const confirmPass = () => {
-        if (user.confirmPassword.length < 8){
+        if ((user.confirmPassword.length < 8) && (user.confirmPassword !== user.password)){
+            setPasswordError("Password must be at least 8 characters long and not the same")
+            return false;
+        }
+        else if (user.confirmPassword.length < 8){
             setPasswordError("Password must be at least 8 characters long")
+            return false;
         }
         else if(user.confirmPassword !== user.password){
             setPasswordError("passwords do not match")
+            return false;
         }
         else{
             setPasswordError("")
+            return true;
         }
-    };
+        }
 
 
     return (
@@ -97,7 +104,7 @@ const HookForm = (props) => {
                     <label htmlFor="fName">First Name:</label>
                     <input type="text" name="firstName"  value={user.firstName} onChange={onChangeHandler}/>
                     {
-                        user.firstName.length < 2 ?
+                        user.firstName && user.firstName.length < 2 ?
                         <p>First name must be at least 3 characters long!</p>:
                         ''
                     }
@@ -106,7 +113,7 @@ const HookForm = (props) => {
                     <label htmlFor="fName">Last Name:</label>
                     <input type="text" name="lastName"  value={user.lastName} onChange={onChangeHandler}/>
                     {
-                        user.lastName.length < 2 ?
+                        user.lastName && user.lastName.length < 2 ?
                         <p>Last name must be at least 3 characters long!</p>:
                         ''
                     }
@@ -115,7 +122,7 @@ const HookForm = (props) => {
                     <label htmlFor="fName">Email:</label>
                     <input type="text" name="email"  value={user.email} onChange={onChangeHandler}/>
                     {
-                        user.email.length < 5 ?
+                        user.email && user.email.length < 5 ?
                         <p>Email must be at least 5 characters long!</p>:
                         ''
                     }
@@ -124,7 +131,7 @@ const HookForm = (props) => {
                     <label htmlFor="fName">Password:</label>
                     <input type="password" name="password"  value= {user.password} onChange={onChangeHandler}/>
                     {
-                        user.password.length < 8 ?
+                        user.password && user.password.length < 8 ?
                         <p>Password must be at least 8 characters long!</p>:
                         ''
                     }
@@ -133,8 +140,9 @@ const HookForm = (props) => {
                     <label htmlFor="fName">Confirm Password:</label>
                     <input type="password" name="confirmPassword"  value= {user.confirmPassword} onChange={onChangeHandler}/>
                     {
-                        user.password !== user.confirmPassword ?
-                        <p>Passwords do not match</p>:
+                        
+                        user.confirmPassword && user.confirmPassword.length < 8 || user.password !== user.confirmPassword ?
+                        <p>Invalid Password</p>:
                         ''
                     }
                 </div>
