@@ -1,36 +1,86 @@
 import React, {useState} from 'react';
 
 const HookForm = (props) => {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPass, setConfirmPass] = useState("");
+    // const [firstName, setFirstName] = useState("");
+    // const [lastName, setLastName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+    // const [confirmPass, setConfirmPass] = useState("");
     const[submitted, setSubmitted] = useState(false);
+    const [passwordError, setPasswordError] = useState("");
+
+    const [user, setUser] = useState({
+        firstName:"",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+    });
+    
+
+
+
 
     const createUser = (e) => {
         e.preventDefault();
 
-        const newUser = {firstName, lastName, email, password, confirmPass };
+        // const newUser = {firstName, lastName, email, password, confirmPass };
 
-        console.log("Hi", newUser);
+        console.log("Hi new user", user);
 
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setPassword("");
-        setConfirmPass("");
+        setUser({
+            firstName:"",
+            lastName: "",
+            email:"",
+            password: "",
+            confirmPassword:"",
+        });
 
+        // setFirstName("");
+        // setLastName("");
+        // setEmail("");
+        // setPassword("");
+        // setConfirmPassword("");
 
         setSubmitted(true);
     };
 
-    const formMessage = () => {
-        if(submitted) {
-            return "Thank you for submitting the form!";
+    // const formMessage = () => {
+    //     if(submitted) {
+    //         return "Thank you for submitting the form!";
+    //     }
+    //     else {
+    //         return ("Welcome, please submit form");
+    //     }
+    // };
+
+    // const validateLength = (e) => {
+    //     setFirstName(e.target.value);
+    //     if(e.target.value.length < 1){
+    //         setError("Name is required!")
+    //     }
+    //     else if(e.target.value.length < 3) {
+    //         setError("Must be at least 3 characters long!")
+    //     }
+    //     else {
+    //         setError("");
+    //     }
+    // }
+
+
+    const onChangeHandler = (e) => {
+        setUser({...user, [e.target.name]: e.target.value})
+    };
+
+    const confirmPass = () => {
+        if (user.confirmPassword.length < 8){
+            setPasswordError("Password must be at least 8 characters long")
         }
-        else {
-            return ("Welcome, please submit form");
+        else if(user.confirmPassword !== user.password){
+            setPasswordError("passwords do not match")
+        }
+        else{
+            setPasswordError("")
         }
     };
 
@@ -38,36 +88,69 @@ const HookForm = (props) => {
     return (
         <div>
             <form onSubmit={createUser}>
-                <h2>{formMessage()}</h2>
+                {
+                    submitted ?
+                    <h4>Thankyou for submitting the form!</h4>:
+                    <h2>Welcome, please submit form</h2>
+                }
                 <div>
                     <label htmlFor="fName">First Name:</label>
-                    <input type="text" name="" id="" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
+                    <input type="text" name="firstName"  value={user.firstName} onChange={onChangeHandler}/>
+                    {
+                        user.firstName.length < 2 ?
+                        <p>First name must be at least 3 characters long!</p>:
+                        ''
+                    }
                 </div>
                 <div>
                     <label htmlFor="fName">Last Name:</label>
-                    <input type="text" name="" id="" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
+                    <input type="text" name="lastName"  value={user.lastName} onChange={onChangeHandler}/>
+                    {
+                        user.lastName.length < 2 ?
+                        <p>Last name must be at least 3 characters long!</p>:
+                        ''
+                    }
                 </div>
                 <div>
                     <label htmlFor="fName">Email:</label>
-                    <input type="text" name="" id="" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <input type="text" name="email"  value={user.email} onChange={onChangeHandler}/>
+                    {
+                        user.email.length < 5 ?
+                        <p>Email must be at least 5 characters long!</p>:
+                        ''
+                    }
                 </div>
                 <div>
                     <label htmlFor="fName">Password:</label>
-                    <input type="password" name="" id="" value= {password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="password" name="password"  value= {user.password} onChange={onChangeHandler}/>
+                    {
+                        user.password.length < 8 ?
+                        <p>Password must be at least 8 characters long!</p>:
+                        ''
+                    }
                 </div>
                 <div>
                     <label htmlFor="fName">Confirm Password:</label>
-                    <input type="password" name="" id="" value= {confirmPass} onChange={(e) => setConfirmPass(e.target.value)}/>
+                    <input type="password" name="confirmPassword"  value= {user.confirmPassword} onChange={onChangeHandler}/>
+                    {
+                        user.password !== user.confirmPassword ?
+                        <p>Passwords do not match</p>:
+                        ''
+                    }
                 </div>
-                <input type="submit" />
+                <input type="submit"/>
+                {/* {
+                    validateLength ?
+                    <input type="submit" disabled /> :
+                } */}
             </form>
             <div>
                 <h4>Your Form Data</h4>
-                <p>First Name: {firstName}</p>
-                <p>Last Name: {lastName}</p>
-                <p>Email: {email}</p>
-                <p>Password: {password}</p>
-                <p>Confirm Password: {confirmPass}</p>
+                <p>First Name: {user.firstName}</p>
+                <p>Last Name: {user.lastName}</p>
+                <p>Email: {user.email}</p>
+                <p>Password: {user.password}</p>
+                <p>Confirm Password: {user.confirmPassword}</p>
             </div>
         </div>
     );
