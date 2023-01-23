@@ -36,7 +36,7 @@ const HookForm = (props) => {
             confirmPassword:"",
         });
 
-        // setFirstName("");
+        // setFirstName(""); 
         // setLastName("");
         // setEmail("");
         // setPassword("");
