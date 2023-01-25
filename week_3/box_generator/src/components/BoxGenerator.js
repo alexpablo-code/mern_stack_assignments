@@ -1,13 +1,8 @@
 import{useState} from 'react';
 
-const BoxGenerator = ({boxList, addBox}) => {
-    const [box, setBox] = useState([
-        {color: ''},
-    ])
+const BoxGenerator = ({boxList, setBoxList}) => {
+    const [box, setBox] = useState({})
 
-    const boxStyle = {
-        backgroundColor : box.color
-    };
     
     const onChangeHandler = (e) => {
         console.log(e)
@@ -19,7 +14,7 @@ const BoxGenerator = ({boxList, addBox}) => {
 
         console.log(e);
 
-        addBox(box);
+        setBoxList([...boxList, box]);
 
         setBox(
             {color:''}
