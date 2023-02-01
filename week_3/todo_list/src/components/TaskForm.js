@@ -27,7 +27,8 @@ const TaskForm = ({todoList, setTodoList}) => {
 
         setTask ({
             id:null,
-            task:''
+            task:'',
+            completed: false
         })
     }
 
