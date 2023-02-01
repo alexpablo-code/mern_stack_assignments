@@ -5,6 +5,7 @@ import './App.css';
 import Home from "./components/Home";
 import Message from "./components/Message";
 import MessageColors from "./components/MessageColors";
+import NotFound from "./components/NotFound";
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/:variable" element={<Message/>}/>
           <Route path="/:message/:color/:backgroundColor" element={<MessageColors/>}/>
+          <Route path="*" element={<NotFound/>}/>
           
 
 
