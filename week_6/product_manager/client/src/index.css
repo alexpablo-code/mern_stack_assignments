@@ -21,6 +21,7 @@ code {
   background-color: green;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .navBar {
@@ -30,8 +31,18 @@ code {
   justify-content: space-around;
 }
 
-.navBar h1 {
+.navBar h1 a{
+  text-decoration: none;
   color: white;
+}
+
+.navBar li a{
+  color: white;
+  text-decoration: none;
+}
+.navBar li{
+  color: white;
+  list-style: none;
 }
 
 .sectionContainer {
@@ -46,4 +57,52 @@ code {
 }
 .bannerContainer img {
   width: 100%;
+}
+
+.productsContainer{
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 20px 0;
+  /* background-color: lightgray; */
+
+}
+
+.productCard{
+  /* background-color: lightgoldenrodyellow; */
+  border: 1px solid;
+  border-radius: 7px;
+  margin: 10px 5px;
+  padding: 3px;
+}
+
+.formContainer{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.productForm{
+  border: 1px solid;
+  width: 60%;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.inputGroup{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 7px;
+  margin: 3px 0;
+}
+
+.productForm button{
+  background-color: green;
+  color:white;
+  padding: 3px;
+  margin: 5px 0;
+}
+
+.objCenter{
+  display: flex;
+  justify-content: center;
 }

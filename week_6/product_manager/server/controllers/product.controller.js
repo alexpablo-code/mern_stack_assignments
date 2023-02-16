@@ -9,5 +9,14 @@ module.exports = {
             .catch((err) => {
                 res.json({message:'Something went wrong', error:err})
             });
+    },
+    allProducts: (req, res) => {
+        Product.find()
+            .then((products) => {
+                res.json(products)
+            })
+            .catch((err) => {
+                res.json({message:"Something went wrong", error:err})
+            })
     }
 }

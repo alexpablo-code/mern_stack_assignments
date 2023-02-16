@@ -23,21 +23,23 @@ const ProductForm = () => {
 
     return (
         <section className='sectionContainer'>
-            <div>
-                <form onSubmit={onSubmitHandler}>
-                    <div>
+            <div className='formContainer'>
+                <form className='productForm' onSubmit={onSubmitHandler}>
+                    <div className='inputGroup'>
                         <label htmlFor="">Title</label>
                         <input type="text" name='title' onChange={(e) => setTitle(e.target.value)}/>
                     </div>
-                    <div>
+                    <div className='inputGroup'>
                         <label htmlFor="">Price</label>
-                        <input type="number" name='price' onChange={(e) => setPrice(e.target.value)}/>
+                        <input type="number" step="0.01" name='price' onChange={(e) => setPrice(e.target.value)}/>
                     </div>
-                    <div>
+                    <div className='inputGroup'>
                         <label htmlFor="">Description</label>
                         <textarea name="description" id="" cols="30" rows="10" onChange={(e)=> setDescription(e.target.value)}></textarea>
                     </div>
+                    <div className='objCenter'>
                     <button type="submit">Submit</button>
+                    </div>
                 </form>
             </div>
 
