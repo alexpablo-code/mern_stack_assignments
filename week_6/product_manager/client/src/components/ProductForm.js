@@ -22,23 +22,26 @@ const ProductForm = () => {
 
 
     return (
-        <div>
-            <form onSubmit={onSubmitHandler}>
-                <div>
-                    <label htmlFor="">Title</label>
-                    <input type="text" name='title' onChange={(e) => setTitle(e.target.value)}/>
-                </div>
-                <div>
-                    <label htmlFor="">Price</label>
-                    <input type="number" name='price' onChange={(e) => setPrice(e.target.value)}/>
-                </div>
-                <div>
-                    <label htmlFor="">Description</label>
-                    <textarea name="description" id="" cols="30" rows="10" onChange={(e)=> setDescription(e.target.value)}></textarea>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <section className='sectionContainer'>
+            <div>
+                <form onSubmit={onSubmitHandler}>
+                    <div>
+                        <label htmlFor="">Title</label>
+                        <input type="text" name='title' onChange={(e) => setTitle(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="">Price</label>
+                        <input type="number" name='price' onChange={(e) => setPrice(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="">Description</label>
+                        <textarea name="description" id="" cols="30" rows="10" onChange={(e)=> setDescription(e.target.value)}></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+        </section>
     );
 }
 

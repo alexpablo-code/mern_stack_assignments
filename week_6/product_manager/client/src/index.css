@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav {
+  background-color: green;
+  display: flex;
+  justify-content: center;
+}
+
+.navBar {
+  width: 80%;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navBar h1 {
+  color: white;
+}
+
+.sectionContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.bannerContainer {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.bannerContainer img {
+  width: 100%;
+}
