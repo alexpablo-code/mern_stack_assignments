@@ -5,6 +5,8 @@ import ProductForm from './components/ProductForm';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import AllProducts from './components/AllProducts';
+import ProductDetails from './components/ProductDetails';
+import EditProduct from './components/EditProduct';
 import './App.css';
 
 function App() {
@@ -21,7 +23,11 @@ function App() {
           <ProductForm/>
           </>
         }/>
-        <Route path="/allproducts" element={<AllProducts allProducts ={allProducts} setAllProducts={setAllProducts}/>}/>
+        <Route path="/allproducts">
+          <Route index element={<AllProducts allProducts ={allProducts} setAllProducts={setAllProducts}/>}/>
+          <Route path=":id" element={<ProductDetails/>}/>
+          <Route path=":id/edit" element={<EditProduct/>}/>
+        </Route>
       </Routes>
     </div>
     </BrowserRouter>

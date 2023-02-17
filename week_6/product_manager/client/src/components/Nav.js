@@ -4,11 +4,11 @@ const Nav = () => {
     return (
         <nav className="nav">
             <div className="navBar">
-                <div>
+                <div className='siteNameContainer'>
                     <h1><Link to={'/'}>Grocery</Link></h1>
                 </div>
-                <div>
-                    <ul>
+                <div className='objCenter'>
+                    <ul className='linkList'>
                         <li><Link to={'/addproducts'}>Add Product</Link></li>
                         <li><Link to={'/allproducts'}>Browse Products</Link></li>
                     </ul>

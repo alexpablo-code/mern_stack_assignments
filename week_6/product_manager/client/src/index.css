@@ -28,12 +28,21 @@ code {
   width: 80%;
   padding: 15px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
+.linkList{
+  display: flex;
+  justify-content: space-around;
+
+}
+/* .siteNameContainer{
+  align-items: center;
+} */
 .navBar h1 a{
   text-decoration: none;
   color: white;
+  font-size: 35px;
 }
 
 .navBar li a{
@@ -43,6 +52,7 @@ code {
 .navBar li{
   color: white;
   list-style: none;
+  margin: 0 5px;
 }
 
 .sectionContainer {
@@ -70,10 +80,11 @@ code {
 
 .productCard{
   /* background-color: lightgoldenrodyellow; */
-  border: 1px solid;
-  border-radius: 7px;
+  border: 1px solid gray;
+  /* border-radius: 7px; */
   margin: 10px 5px;
-  padding: 3px;
+  padding: 5px;
+  text-align: center;
 }
 
 .formContainer{
@@ -105,4 +116,31 @@ code {
 .objCenter{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
+
+.detailsCard{
+  width: 50%;
+  border: 2px solid;
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px 0;
+}
+.detailsCard h5 {
+  font-size: 20px;
+}
+
+.marginY-10 {
+  margin: 10px 0;
+}
+
+.actionsBox a, .actionsBox button{
+  margin: 0 10px;
+}
+
+.actionsBox button{
+  background-color: red;
+  color: white;
+  padding: 2px;
+}
+
