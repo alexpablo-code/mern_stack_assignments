@@ -144,3 +144,7 @@ code {
   padding: 2px;
 }
 
+.errors{
+  text-align: center;
+  color: red;
+}
