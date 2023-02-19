@@ -8,6 +8,8 @@ const ProductForm = () => {
     const[description, setDescription] = useState("");
     const navigate = useNavigate();
 
+    const[errors, setErrors] = useState({})
+
     const onSubmitHandler = (e) => {
         e.preventDefault();
 
@@ -19,7 +21,8 @@ const ProductForm = () => {
                 navigate('/allproducts');
             })
             .catch(err => {
-                console.log("Something went wrong", err)
+                console.log(err.response.data.errors)
+                setErrors(err.response.data.errors)
             })
     }
 
