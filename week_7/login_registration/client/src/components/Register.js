@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 
 
@@ -35,7 +36,8 @@ const Register = () => {
                 <label className='form-label'>Confirm Password:</label>
                 <input className='form-control' type="text" name="confirmPassword" value={userReg.confirmPassword} onChange={onChangeHandler}/>
 
-                <button className='btn btn-dark mt-3'>Register</button>
+                <button className='btn btn-dark mt-3'>Register</button> <br/> 
+                <Link className='text-white' to={'/login'}>Already have an account? Click here to login</Link>
             </form>
             
         </div>
