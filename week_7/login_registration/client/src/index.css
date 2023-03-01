@@ -23,6 +23,7 @@ height: 100vh;
 
 .user-form{
   background-color: rgba(94, 81, 81, 0.5);
+  /* margin-top: 20px; */
   padding: 20px;
   border-radius: 10px;
   color: white;
