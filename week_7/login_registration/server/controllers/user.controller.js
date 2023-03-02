@@ -55,7 +55,7 @@ module.exports = {
         }
     },
     logout: async (req,res) => {
-        res.clearCookie('userToken')
-        res.sendStatus(200).json({message:'User is logged out'})
+        res.clearCookie('userToken').json({message:'User is logged out'})
+        // res.sendStatus(200).json({message:'User is logged out'})
     }
 }

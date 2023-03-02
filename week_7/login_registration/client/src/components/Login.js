@@ -1,8 +1,10 @@
 import {useState} from 'react';
-import{Link} from 'react-router-dom';
+import{Link, useNavigate} from 'react-router-dom';
+import axios from  'axios';
 
 
 const Login = () => {
+    const navigate = useNavigate();
     const[user, setUser] = useState({
         email:'',
         password: ''
@@ -12,10 +14,23 @@ const Login = () => {
         setUser({...user, [e.target.name]: e.target.value})
     }
 
+    const loginHandler = (e) => {
+        e.preventDefault();
+
+        axios.post('http://localhost:8000/api/login', user, {withCredentials:true})
+            .then((res) => {
+                console.log(res);
+                navigate('/dashboard')
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
 
     return (
         <div className='bg-img'>
-            <form className='col-4 mx-auto user-form'>
+            <form className='col-4 mx-auto user-form' onSubmit={loginHandler}>
                 <h2>Login</h2>
                 <label className='form-label'>Email:</label>
                 <input className='form-control' type="text" name="email" value={user.email} onChange={onChangeHandler}/>
