@@ -17,9 +17,9 @@ const Dashboard = () => {
     }
 
     return (
-        <div>
-            <h1>Welcome to Dashboard</h1>
-            <button onClick={logout}>Logout</button>
+        <div className='bg-dash'>
+            <h1 className='text-white py-5'>Welcome to Konoha</h1>
+            <button className='btn btn-danger' onClick={logout}>Logout</button>
         </div>
     );
 }

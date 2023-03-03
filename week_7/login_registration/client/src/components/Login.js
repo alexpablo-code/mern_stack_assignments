@@ -29,15 +29,15 @@ const Login = () => {
 
 
     return (
-        <div className='bg-img'>
+        <div className='bg-img py-5'>
             <form className='col-4 mx-auto user-form' onSubmit={loginHandler}>
                 <h2>Login</h2>
                 <label className='form-label'>Email:</label>
                 <input className='form-control' type="text" name="email" value={user.email} onChange={onChangeHandler}/>
 
                 <label className='form-label'>Password:</label>
-                <input className='form-control' type="text" name="password" value={user.password} onChange={onChangeHandler}/>
-                <button className='btn btn-dark mt-3'>Login</button><br/>
+                <input className='form-control' type="password" name="password" value={user.password} onChange={onChangeHandler}/>
+                <button className='btn btn-warning mt-3'>Login</button><br/>
                 <Link to={'/'} className='text-white' >Don't have an account? Click here to sign up</Link>
             </form>
         </div>

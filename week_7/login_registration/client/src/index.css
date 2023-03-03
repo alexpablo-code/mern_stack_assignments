@@ -14,15 +14,22 @@ code {
 
 
 .bg-img{
-background-image: url('../src/images/coding_bg.jpg');
+background-image: url('../src/images/naruto\ final\ valley.jpg');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 height: 100vh;
 }
+.bg-dash{
+  background-image: url('../src/images/konoja\ scenery.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  }
 
 .user-form{
-  background-color: rgba(94, 81, 81, 0.5);
+  background-color: rgba(51, 42, 42, 0.8);
   /* margin-top: 20px; */
   padding: 20px;
   border-radius: 10px;

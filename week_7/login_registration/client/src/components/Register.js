@@ -33,7 +33,7 @@ const Register = () => {
 
 
     return (
-        <div className='bg-img'> 
+        <div className='bg-img py-5'> 
             <form className='col-4 mx-auto user-form' onSubmit={onSubmitHandler}>
                 <h2>Register</h2>
                 <label className='form-label'>First Name:</label>
@@ -46,12 +46,12 @@ const Register = () => {
                 <input className='form-control' type="text" name="email" value={userReg.email} onChange={onChangeHandler}/>
 
                 <label className='form-label'>Password:</label>
-                <input className='form-control' type="text" name="password" value={userReg.password} onChange={onChangeHandler}/>
+                <input className='form-control' type="password" name="password" value={userReg.password} onChange={onChangeHandler}/>
 
                 <label className='form-label'>Confirm Password:</label>
-                <input className='form-control' type="text" name="confirmPassword" value={userReg.confirmPassword} onChange={onChangeHandler}/>
+                <input className='form-control' type="password" name="confirmPassword" value={userReg.confirmPassword} onChange={onChangeHandler}/>
 
-                <button className='btn btn-dark mt-3'>Register</button> <br/> 
+                <button className='btn btn-warning mt-3'>Register</button> <br/> 
                 <Link className='text-white' to={'/login'}>Already have an account? Click here to login</Link>
             </form>
             
